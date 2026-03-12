@@ -1,0 +1,778 @@
+\documentclass[11pt,a4paper]{article}
+
+% ==================================================
+% Packages
+% ==================================================
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{ragged2e}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem}
+\usepackage{booktabs,array,longtable}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{url}
+
+% ==================================================
+% Layout safety
+% ==================================================
+\setstretch{1.08}
+\setlength{\emergencystretch}{3em}
+\setlist[itemize]{topsep=3pt,itemsep=2pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt}
+\sloppy
+\raggedbottom
+\Urlmuskip=0mu plus 1mu
+\allowdisplaybreaks
+
+% ==================================================
+% Colors
+% ==================================================
+\definecolor{darkblue}{RGB}{20,45,90}
+\definecolor{midblue}{RGB}{46,117,182}
+\definecolor{lightblue}{RGB}{235,244,251}
+\definecolor{amber}{RGB}{210,120,0}
+\definecolor{green}{RGB}{46,125,50}
+\definecolor{purple}{RGB}{106,27,154}
+\definecolor{codegray}{RGB}{245,245,245}
+\definecolor{keywordblue}{RGB}{30,60,160}
+\definecolor{commentgreen}{RGB}{0,120,40}
+\definecolor{stringred}{RGB}{150,30,30}
+
+% ==================================================
+% Hyperref
+% ==================================================
+\hypersetup{
+  colorlinks=true,
+  linkcolor=darkblue,
+  citecolor=darkblue,
+  urlcolor=darkblue,
+  pdftitle={Vo: Primordial Theory III - Formal System and Algorithms},
+  pdfauthor={Kevin T.N},
+  pdfsubject={Formal system and algorithms for Primordial Theory and Neurol},
+  pdfcreator={LaTeX}
+}
+
+% ==================================================
+% Theorem environments
+% ==================================================
+\newtheorem{definition}{Definition}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{postulate}{Postulate}[section]
+\newtheorem{principle}{Principle}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{hypothesis}{Hypothesis}[section]
+\newtheorem{algorithmdef}{Algorithm}[section]
+
+% ==================================================
+% Section title format
+% ==================================================
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection.}{0.6em}{}
+
+% ==================================================
+% Boxes
+% ==================================================
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{lawbox}[1]{colback=lightblue,colframe=midblue,title={#1},breakable}
+\newtcolorbox{notebox}[1]{colback=amber!8,colframe=amber,title={#1},breakable}
+\newtcolorbox{algobox}[1]{colback=green!6,colframe=green,title={#1},breakable}
+\newtcolorbox{purplebox}[1]{colback=purple!5,colframe=purple,title={#1},breakable}
+
+% ==================================================
+% Shortcuts
+% ==================================================
+\newcommand{\TuNiem}{\textit{Tu Niem}}
+\newcommand{\SinhVN}{\textit{Sinh}}
+\newcommand{\DanVN}{\textit{Dan}}
+\newcommand{\ChuyenVN}{\textit{Chuyen}}
+\newcommand{\DungVN}{\textit{Dung}}
+\newcommand{\HoaiVN}{\textit{Hoai}}
+\newcommand{\VoVN}{\textit{Vo}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\Abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\Set}[1]{\left\{ #1 \right\}}
+\newcommand{\Inner}[2]{\left\langle #1,#2 \right\rangle}
+\newcommand{\projctx}{\mathrm{proj}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\sigmoid}{\sigma}
+\newcommand{\softmax}{\mathrm{softmax}}
+\newcommand{\argmax}{\mathrm{argmax}}
+
+\title{\textbf{Vo: Primordial Theory III}\\
+\large Formal System and Algorithms for Neurol}
+
+\author{Kevin T.N \\ Vietnam \\ \texttt{keedavinci@gmail.com}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document presents the formal system and algorithmic closure of Primordial Theory for Neurol. It assumes the conceptual foundations have already been established in the preceding theory volumes. The present volume fixes the state variables, operator families, threshold logic, semantic-context operators, collapse rules, lineage and compression operators, ledger certification rules, and the dynamics of the Neurol Ledger Network. The emphasis is mathematical and procedural.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Formal Scope}
+
+The present volume closes the formal side of the theory. It defines:
+\begin{enumerate}[label=\arabic*.]
+    \item the canonical state space of a primordial unit;
+    \item the operator families acting on that state space;
+    \item threshold and legality rules;
+    \item semantic-context algorithms;
+    \item time-energy-collapse laws;
+    \item lineage, compression, and decompression rules;
+    \item ledger write, continuity, and valuation rules;
+    \item Neurol Ledger Network dynamics.
+\end{enumerate}
+
+\section{Notation and State Space}
+
+\subsection{Canonical state of a primordial unit}
+
+\begin{definition}[Primordial state]
+A primordial unit at time $t$ is represented by
+\[
+P_t = \bigl(s_t,m_t,e_t,\pi_t,\ell_t,c_t,z_t,v_t,A_t,a_t\bigr),
+\]
+where:
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.18\textwidth} p{0.68\textwidth}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$s_t$ & explicit internal state \\
+$m_t$ & memory residue \\
+$e_t$ & transformation capacity \\
+$\pi_t$ & phase variable \\
+$\ell_t$ & lineage mark \\
+$c_t$ & active context \\
+$z_t$ & compressed seed \\
+$v_t$ & semantic vector \\
+$A_t$ & anchor set \\
+$a_t$ & accumulated readiness \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{definition}
+
+\subsection{Phase domain}
+
+\[
+\pi_t \in \Set{\SinhVN,\DanVN,\ChuyenVN,\DungVN,\HoaiVN,\VoVN}.
+\]
+
+\subsection{Auxiliary variables}
+
+The full transition also uses the following auxiliary quantities:
+\[
+ u_t,\ \chi_t,\ \Delta_t^{\mathrm{field}},\ \mathcal{R}_{\mathrm{sem}}(t),\ \mathcal{C}_t,\ V_t,\ \kappa_t,\ \upsilon_t.
+\]
+
+\section{Operator Families}
+
+\subsection{Ingress family}
+
+\[
+\mathfrak{O}_{\mathrm{in}} = \Set{\Pi,\ \mathcal{F}_{\mathrm{disp}},\ \mathcal{A}_{\mathrm{ctx}}}.
+\]
+
+\subsection{State family}
+
+\[
+\mathfrak{O}_{\mathrm{state}} = \Set{\mathcal{T},\ \mathcal{U},\ \mathcal{R},\ \mathcal{S},\ \mathcal{L}}.
+\]
+
+\subsection{Semantic family}
+
+\[
+\mathfrak{O}_{\mathrm{sem}} = \Set{\projctx,\ \mathfrak{I},\ \mathcal{J},\ \mathcal{R}^{\mathrm{sem}}}.
+\]
+
+\subsection{Lineage family}
+
+\[
+\mathfrak{O}_{\mathrm{line}} = \Set{\mathcal{C},\ \mathcal{D},\ \mathcal{A}_{\mathrm{inherit}},\ \mathcal{L}_{\mathrm{cont}}}.
+\]
+
+\subsection{Ledger family}
+
+\[
+\mathfrak{O}_{\mathrm{ledger}} = \Set{\mathcal{W}_{\mathrm{ledger}},\ \mathcal{Q}_{\mathrm{ledger}},\ \mathcal{N}_{\mathrm{lift}}}.
+\]
+
+\section{Input Projection and Accumulation Dynamics}
+
+\subsection{Projected perturbation}
+
+\[
+ u_t = \Pi(x_t,c_t,v_t,A_t).
+\]
+
+\subsection{Accumulation law}
+
+\[
+ a_{t+1} = \lambda_a a_t + \alpha_u u_t + \alpha_m \mathcal{F}_m(m_t) + \alpha_c \mathcal{F}_c(c_t,v_t) - \beta_d \delta_t.
+\]
+
+\subsection{Interpretation}
+
+The accumulation variable gathers present perturbation, historical carry-over, contextual excitation, and dissipation into one readiness quantity. It is the direct mathematical carrier of temporal sufficiency.
+
+\section{Threshold, Commit, and Phase Gates}
+
+\subsection{Primary threshold gate}
+
+\[
+\chi_t = \mathbb{1}[a_t \ge \theta_t \land e_t \ge \kappa_t^{\mathrm{min}}].
+\]
+
+\subsection{Effective semantic threshold}
+
+When semantic modulation is made explicit, define the effective threshold by
+\[
+\theta_t^{\mathrm{eff}} = \theta_t - \lambda_{\mathrm{sem}}\mathcal{R}_{\mathrm{sem}}(t) + \kappa_{\mathrm{ctx}}\mathcal{K}^{\mathrm{cost}}(\mathcal{C}_t).
+\]
+Then the semantic-aware gate becomes
+\[
+\chi_t^{\mathrm{eff}} = \mathbb{1}[a_t \ge \theta_t^{\mathrm{eff}} \land e_t \ge \kappa_t^{\mathrm{min}}].
+\]
+
+\subsection{Phase selection rule}
+
+\[
+ \pi_{t+1}=
+ \begin{cases}
+ \SinhVN, & \text{emergent crossing condition}, \\
+ \DanVN, & \text{propagation-dominant condition}, \\
+ \ChuyenVN, & \chi_t=1 \text{ and transformation is active}, \\
+ \DungVN, & \mathcal{C}_t\ge\theta_{\mathrm{Dung}}, \\
+ \HoaiVN, & \mathcal{C}_t<\theta_{\mathrm{Dung}} \land \mathcal{I}_{\mathrm{seed}}(P_t)\ge\theta_{\mathrm{seed}}, \\
+ \VoVN, & \text{latent-preservable non-foreground mode}.
+ \end{cases}
+\]
+
+\section{State Transition Operators}
+
+\subsection{Active transition}
+
+\[
+ s_{t+1}^{\mathrm{act}} = \mathcal{T}(s_t,u_t,m_t,c_t,\ell_t,v_t).
+\]
+
+\subsection{Passive update}
+
+\[
+ s_{t+1}^{\mathrm{pas}} = \mathcal{U}(s_t,u_t,m_t,c_t,\ell_t,v_t).
+\]
+
+\subsection{Combined state transition}
+
+\[
+ s_{t+1}=
+ \begin{cases}
+ s_{t+1}^{\mathrm{act}}, & \chi_t=1, \\
+ s_{t+1}^{\mathrm{pas}}, & \chi_t=0.
+ \end{cases}
+\]
+
+\section{Energy and Dissipation Laws}
+
+\subsection{Capacity update}
+
+\[
+ e_{t+1}=e_t+g_t-c_t^{\mathrm{burn}}-\tau_t^{\mathrm{ent}}.
+\]
+
+\subsection{Admissible energy band}
+
+\[
+0 \le e_t \le e_{\max}.
+\]
+
+\subsection{Weak and strong perturbation regimes}
+
+A perturbation is weak when
+\[
+E_A < E_{\mathrm{disp}},
+\]
+and strong when
+\[
+E_A \ge E_{\mathrm{disp}}.
+\]
+The latter regime is collapse-capable.
+
+\section{Semantic-Context Algorithms}
+
+\subsection{Semantic vector normalization}
+
+\[
+ v_t \in \R^{d_v}, \qquad \Norm{v_t}=1.
+\]
+
+\subsection{Anchor mean}
+
+\[
+\mu_t = \frac{1}{k}\sum_{j=1}^k a_t^{(j)}.
+\]
+
+\subsection{Centered anchor matrix}
+
+\[
+M_t =
+\begin{bmatrix}
+(a_t^{(1)}-\mu_t)^\top \\
+\vdots \\
+(a_t^{(k)}-\mu_t)^\top
+\end{bmatrix}.
+\]
+
+\subsection{Context-plane projection}
+
+If $u_1,u_2,u_3$ are dominant singular directions, define
+\[
+\projctx_t(v_t)=\bigl(\Inner{v_t-\mu_t}{u_1},\Inner{v_t-\mu_t}{u_2},\Inner{v_t-\mu_t}{u_3}\bigr).
+\]
+
+\subsection{Context-dependent semantic distance}
+
+\[
+ d_{ij}^{\mathrm{ctx}}(t)=1-
+ \frac{\Inner{\projctx_t(v_t^{(i)})}{\projctx_t(v_t^{(j)})}}
+ {\Norm{\projctx_t(v_t^{(i)})}\Norm{\projctx_t(v_t^{(j)})}+\eps}.
+\]
+
+\subsection{Semantic resonance}
+
+\[
+\mathcal{R}_{ij}^{\mathrm{sem}}(t)=
+\alpha_A \frac{\Abs{A_t^{(i)} \cap A_t^{(j)}}}{\max(\Abs{A_t^{(i)}},\Abs{A_t^{(j)}},1)}
++ \alpha_V \Inner{v_t^{(i)}}{v_t^{(j)}}
++ \alpha_P e^{-d_{ij}^{\mathrm{ctx}}(t)}.
+\]
+
+\subsection{Aggregate semantic resonance}
+
+\[
+\mathcal{R}_{\mathrm{sem}}(t)=\frac{1}{\Abs{\mathcal{N}_t}}\sum_{j\in\mathcal{N}_t}\mathcal{R}_{ij}^{\mathrm{sem}}(t).
+\]
+
+\subsection{Imagination mapping}
+
+\[
+\mathfrak{I}(B,A_x,i)=\Set{B}\cup\bigl(A_{A_x}\setminus\Set{a_i}\bigr).
+\]
+
+\subsection{Context scoring}
+
+\[
+\mathcal{J}(\mathcal{C};P_t)=
+\beta_1 \mathcal{R}^{\mathrm{sem}}(\mathcal{C},P_t)
++\beta_2 \mathcal{R}^{\mathrm{hist}}(\mathcal{C},m_t)
++\beta_3 \mathcal{R}^{\mathrm{id}}(\mathcal{C},\ell_t)
+-\beta_4 \mathcal{K}^{\mathrm{cost}}(\mathcal{C}).
+\]
+
+\subsection{Semantic update}
+
+\[
+ v_{t+1}=\frac{\rho_v v_t+\eta_v\mathcal{G}(s_{t+1},c_t,m_{t+1},A_t)}{\Norm{\rho_v v_t+\eta_v\mathcal{G}(s_{t+1},c_t,m_{t+1},A_t)}+\eps}.
+\]
+
+\subsection{Anchor update}
+
+\[
+A_{t+1}=\mathcal{A}_{\mathrm{ctx}}(v_{t+1},q_t,\delta_t).
+\]
+
+\section{Collapse and Field Displacement Formalism}
+
+\subsection{Field displacement}
+
+\[
+\Delta_t^{\mathrm{field}}=\mathcal{F}_{\mathrm{disp}}(u_t,s_t,c_t,v_t).
+\]
+
+\subsection{Collapse legality}
+
+\[
+\Delta_t^{\mathrm{field}}\ge\theta_t^{\mathrm{coll}}
+\quad \text{and} \quad
+ e_t\ge\kappa_t^{\mathrm{min}}.
+\]
+
+\subsection{Temporal superposition simplex}
+
+Let the candidate channel weights satisfy
+\[
+\omega_t^{(j)}\ge0,
+\qquad
+\sum_{j=1}^{n}\omega_t^{(j)}=1.
+\]
+This defines the unresolved temporal simplex before commitment.
+
+\section{Residue, Seed, and Continuation Operators}
+
+\subsection{Residue update}
+
+\[
+ m_{t+1}=(1-\lambda_m)m_t+\lambda_m\mathcal{R}(s_t,s_{t+1},u_t,c_t).
+\]
+
+\subsection{Seed formation}
+
+\[
+ z_{t+1}=\mathcal{S}(P_t)
+ \quad \text{if} \quad
+ \pi_{t+1}=\HoaiVN \land \mathcal{I}_{\mathrm{seed}}(P_t)\ge\theta_{\mathrm{seed}}.
+\]
+
+\subsection{Continuation score}
+
+\[
+\mathcal{C}_t=
+\gamma_s\mathcal{S}_{\mathrm{state}}(s_t,s_{t+1})+
+\gamma_\ell\mathcal{L}_{\mathrm{cont}}(t)+
+\gamma_e\mathcal{F}_e(e_{t+1})+
+\gamma_c\mathcal{F}_{\mathrm{ctx}}(c_t,v_{t+1},A_{t+1})+
+\gamma_r\mathcal{R}_{\mathrm{sem}}(t).
+\]
+
+\subsection{Viability score}
+
+\[
+V_t=\alpha_V\mathcal{C}_t+\beta_V e_t+\gamma_V\mathcal{R}_{\mathrm{sem}}(t)-\delta_V\tau_t^{\mathrm{ent}}.
+\]
+
+\section{Lineage and ARC Algorithms}
+
+\subsection{Lineage mark}
+
+\[
+\ell_t=(\mathrm{id},\mathrm{ancestor},\mathrm{branch},\mathrm{depth},\mathrm{type}).
+\]
+
+\subsection{Entity representation}
+
+\[
+E=(G,X,A,K,q,\delta).
+\]
+
+\subsection{Compression operator}
+
+\[
+\mathcal{C}(E)=z=(G,\eps^{\mathrm{epi}},k^{\mathrm{boot}}).
+\]
+
+\subsection{Decompression operator}
+
+\[
+\mathcal{D}(z,V)=E'.
+\]
+
+\subsection{Child generative rule}
+
+\[
+ g_{t+1}^{\mathrm{child}}[i]=
+ \begin{cases}
+ g_t^{(1)}[i], & \mu_t^{\mathrm{mask}}[i]=1, \\
+ \dfrac{g_t^{(1)}[i]+g_t^{(2)}[i]}{2}+\eta_t[i], & \mu_t^{\mathrm{mask}}[i]=0.
+ \end{cases}
+\]
+
+\subsection{Mutation legality}
+
+\[
+\Norm{\eta_t}_2\le\tau_{\mathrm{mut}}.
+\]
+
+\subsection{Context inheritance}
+
+\[
+A_{t+1}^{\mathrm{child}}=\mathcal{A}_{\mathrm{inherit}}(A_t^{(1)},A_t^{(2)},V).
+\]
+
+\subsection{Lineage continuity score}
+
+\[
+\mathcal{L}_{\mathrm{cont}}(t)=
+\beta_1\mathcal{R}_{\mathrm{ancestor}}(\ell_t)+
+\beta_2\mathcal{R}_{\mathrm{branch}}(\ell_t)+
+\beta_3\mathcal{R}_{\mathrm{causal}}(\ell_t).
+\]
+
+\section{Legality Families}
+
+\subsection{Viability legality}
+
+\[
+V_t\ge\theta_V.
+\]
+
+\subsection{Identity legality}
+
+For long-horizon identity state $d_t^{\mathrm{long}}$, define
+\[
+\mathcal{H}_t=\frac{\Inner{d_t^{\mathrm{long}}}{d_{t-1}^{\mathrm{long}}}}{\Norm{d_t^{\mathrm{long}}}\Norm{d_{t-1}^{\mathrm{long}}}+\eps}
+\]
+and
+\[
+\Delta_t^{\mathrm{id}}=\Norm{d_t^{\mathrm{long}}-d_{t-1}^{\mathrm{long}}}_2.
+\]
+Then identity legality requires
+\[
+\mathcal{H}_t\ge\tau_{\mathrm{coh}}
+\quad \text{and} \quad
+\Delta_t^{\mathrm{id}}\le\tau_{\mathrm{drift}}.
+\]
+
+\subsection{Seed legality}
+
+\[
+\mathcal{I}_{\mathrm{seed}}(P_t)\ge\theta_{\mathrm{seed}}
+\quad \text{and} \quad
+\mathcal{L}_{\mathrm{cont}}(t)\ge\theta_{\ell}.
+\]
+
+\subsection{Context legality}
+
+\[
+\mathcal{J}(\mathcal{C};P_t)\ge\theta_{\mathrm{ctx}}
+\quad \text{and} \quad
+\mathcal{K}^{\mathrm{cost}}(\mathcal{C})\le\kappa_{\mathrm{ctx}}.
+\]
+
+\section{Ledger Algorithms}
+
+\subsection{Ledger event}
+
+\[
+\Lambda_t=(\mathrm{id}_t,\,\ell_t,\,\pi_t,\,\upsilon_t,\,\rho_t,\,\kappa_t,\,\sigma_t).
+\]
+
+\subsection{Ledger state}
+
+\[
+\mathcal{L}_t=\Set{\Lambda_0,\Lambda_1,\dots,\Lambda_t}.
+\]
+
+\subsection{Commit strength}
+
+\[
+\kappa_t=\chi_t\cdot\mathcal{B}_t,
+\qquad
+\mathcal{B}_t=\min\!\left(1,\frac{a_t}{\theta_t+\eps}\right)\cdot\min\!\left(1,\frac{e_t}{\kappa_t^{\mathrm{min}}+\eps}\right).
+\]
+
+\subsection{Ledger valuation}
+
+\[
+\upsilon_t=\alpha_{\upsilon}V_t+\beta_{\upsilon}\mathcal{C}_t+\gamma_{\upsilon}\mathcal{R}_{\mathrm{sem}}(t).
+\]
+
+\subsection{Ledger write rule}
+
+\[
+\mathcal{W}_{\mathrm{ledger}}(t)=\mathbb{1}[\kappa_t\ge\theta_{\mathrm{ledger}}].
+\]
+
+\subsection{Ledger update}
+
+\[
+\mathcal{L}_{t+1}=
+\begin{cases}
+\mathcal{L}_t\cup\Set{\Lambda_{t+1}}, & \mathcal{W}_{\mathrm{ledger}}(t+1)=1, \\
+\mathcal{L}_t, & \mathcal{W}_{\mathrm{ledger}}(t+1)=0.
+\end{cases}
+\]
+
+\subsection{Ledger continuity score}
+
+\[
+\mathcal{Q}_{\mathrm{ledger}}(t)=\zeta_1\mathcal{L}_{\mathrm{cont}}(t)+\zeta_2\upsilon_t+\zeta_3\kappa_t.
+\]
+
+\section{Neurol Ledger Network Algorithms}
+
+\subsection{Network definition}
+
+\[
+\mathcal{G}_{\mathrm{ledger}}=(\mathcal{V}_{\mathrm{n}},\mathcal{E}_{\mathrm{l}}).
+\]
+
+\subsection{Node lift}
+
+\[
+\mathcal{N}_{\mathrm{lift}}(P_t)=1 \iff V_t\ge\theta_{\mathrm{node}} \wedge \mathcal{Q}_{\mathrm{ledger}}(t)\ge\theta_{\mathrm{net}}.
+\]
+
+\subsection{Exchange quantity}
+
+\[
+\mathcal{X}_{ij}(t)=\omega_1\mathcal{R}_{ij}^{\mathrm{sem}}(t)+\omega_2\mathcal{I}_{ij}(t)+\omega_3\mathcal{L}_{\mathrm{cont},ij}(t).
+\]
+
+\subsection{Edge formation}
+
+\[
+\mathcal{E}_{ij}(t)=1 \iff \mathcal{X}_{ij}(t)\ge\theta_{\mathrm{edge}}.
+\]
+
+\subsection{Edge weight}
+
+\[
+ w_{ij}(t)=\omega_1\mathcal{R}_{ij}^{\mathrm{sem}}(t)+\omega_2\mathcal{Q}_{\mathrm{ledger},ij}(t)+\omega_3\mathcal{B}_{ij}(t).
+\]
+
+\subsection{Network memory}
+
+\[
+\mathcal{M}_{\mathrm{net}}(t)=\Set{(i,j,w_{ij}(t),\Lambda_{ij}(t)):\mathcal{E}_{ij}(t)=1}.
+\]
+
+\subsection{Existence reward}
+
+\[
+\mathcal{R}^{\mathrm{exist}}_i(t)=\eta_1\sum_j w_{ij}(t)+\eta_2\mathcal{Q}_{\mathrm{ledger},i}(t)+\eta_3\mathcal{L}_{\mathrm{cont},i}(t).
+\]
+
+\subsection{Seed propagation over the network}
+
+\[
+ z_{i,t+1}^{\mathrm{net}}=\mathcal{S}_{\mathrm{net}}(P_{i,t},\mathcal{M}_{\mathrm{net}}(t))
+\quad \text{if} \quad
+\mathcal{Q}_{\mathrm{ledger},i}(t)\ge\theta_{\mathrm{seed,net}}.
+\]
+
+\subsection{Node persistence}
+
+\[
+\mathcal{R}^{\mathrm{exist}}_i(t)\ge\theta_{\mathrm{exist,node}}.
+\]
+
+\subsection{Edge decay and reinforcement}
+
+\[
+ w_{ij}(t+1)=\lambda_w w_{ij}(t)+\nu_1\mathcal{R}_{ij}^{\mathrm{sem}}(t)+\nu_2\mathcal{Q}_{\mathrm{ledger},ij}(t)-\nu_3\mathcal{D}_{ij}^{\mathrm{decay}}(t).
+\]
+
+\subsection{Cluster emergence}
+
+\[
+\mathcal{C}_{\mathrm{cluster}}(S,t)=\frac{\sum_{i,j\in S}w_{ij}(t)}{\Abs{S}^2}\ge\theta_{\mathrm{cluster}}.
+\]
+
+\section{Integrated Canonical Transition}
+
+\subsection{State transition}
+
+\[
+P_{t+1}=\mathfrak{P}(P_t,x_t)=\Bigl(s_{t+1},m_{t+1},e_{t+1},\pi_{t+1},\ell_{t+1},c_{t+1},z_{t+1},v_{t+1},A_{t+1},a_{t+1}\Bigr).
+\]
+
+\subsection{Candidate ledger event}
+
+\[
+\Lambda_{t+1}^{\ast}=(\mathrm{id}_{t+1},\ell_{t+1},\pi_{t+1},\upsilon_{t+1},\rho_{t+1},\kappa_{t+1},\sigma_{t+1}).
+\]
+
+\subsection{Integrated transition object}
+
+\[
+\widetilde{P}_{t+1}=\bigl(P_{t+1},\mathcal{L}_{t+1},\mathcal{M}_{\mathrm{net}}(t+1)\bigr).
+\]
+
+\section{Canonical Algorithms}
+
+\begin{algobox}{Algorithm A: Primordial step}
+Given $P_t$ and input $x_t$:
+\begin{enumerate}[label=\arabic*.]
+    \item compute $u_t$ by projected ingress;
+    \item update $a_{t+1}$ by accumulation law;
+    \item compute threshold gate $\chi_t$;
+    \item update $s_{t+1}$ through active or passive branch;
+    \item update $e_{t+1}$, $m_{t+1}$, $v_{t+1}$, and $A_{t+1}$;
+    \item compute $\Delta_t^{\mathrm{field}}$, $\mathcal{R}_{\mathrm{sem}}(t)$, $\mathcal{C}_t$, and $V_t$;
+    \item determine $\pi_{t+1}$ and, when legal, form $z_{t+1}$;
+    \item update lineage $\ell_{t+1}$;
+    \item output $P_{t+1}$.
+\end{enumerate}
+\end{algobox}
+
+\begin{algobox}{Algorithm B: Ledger certification}
+Given $P_{t+1}$:
+\begin{enumerate}[label=\arabic*.]
+    \item compute $\kappa_{t+1}$ and $\upsilon_{t+1}$;
+    \item construct candidate event $\Lambda_{t+1}^{\ast}$;
+    \item apply write rule $\mathcal{W}_{\mathrm{ledger}}(t+1)$;
+    \item update ledger state $\mathcal{L}_{t+1}$;
+    \item compute ledger continuity score $\mathcal{Q}_{\mathrm{ledger}}(t+1)$.
+\end{enumerate}
+\end{algobox}
+
+\begin{algobox}{Algorithm C: Neurol Ledger Network update}
+Given $P_{t+1}$ and $\mathcal{L}_{t+1}$:
+\begin{enumerate}[label=\arabic*.]
+    \item evaluate node-lift condition;
+    \item compute exchange quantities between eligible pairs;
+    \item apply edge-formation rule;
+    \item update edge weights and network memory;
+    \item compute existence rewards and cluster emergence;
+    \item output $\mathcal{G}_{\mathrm{ledger}}(t+1)$.
+\end{enumerate}
+\end{algobox}
+
+\section{Parameter Families}
+
+\subsection{Threshold family}
+
+\[
+\Theta=\Set{\theta_t,\theta_t^{\mathrm{coll}},\theta_{\mathrm{Dung}},\theta_V,\theta_{\mathrm{seed}},\theta_{\mathrm{ledger}},\theta_{\mathrm{node}},\theta_{\mathrm{edge}},\theta_{\mathrm{ctx}},\theta_{\mathrm{cluster}}}.
+\]
+
+\subsection{Capacity family}
+
+\[
+\mathcal{E}=\Set{e_t,e_{\max},\kappa_t^{\mathrm{min}},g_t,c_t^{\mathrm{burn}},\tau_t^{\mathrm{ent}}}.
+\]
+
+\subsection{Semantic family}
+
+\[
+\mathcal{S}_{\mathrm{sem}}=\Set{\alpha_A,\alpha_V,\alpha_P,\beta_1,\beta_2,\beta_3,\beta_4,\lambda_{\mathrm{sem}},\kappa_{\mathrm{ctx}}}.
+\]
+
+\subsection{Lineage family}
+
+\[
+\mathcal{L}_{\mathrm{fam}}=\Set{\tau_{\mathrm{mut}},\theta_{\ell},\mu_t^{\mathrm{mask}},\eta_t}.
+\]
+
+\subsection{Ledger family}
+
+\[
+\mathcal{G}_{\mathrm{fam}}=\Set{\zeta_1,\zeta_2,\zeta_3,\eta_1,\eta_2,\eta_3,\lambda_w,\nu_1,\nu_2,\nu_3}.
+\]
+
+\section{Conclusion}
+
+The present volume closes the mathematical and algorithmic side of Primordial Theory. Together with the prior theory volumes, it yields a three-part structure: foundational ontology, detailed conceptual expansion, and formal-algorithmic closure. The resulting system is sufficient to derive the primordial unit, its transitions, its residue and seed logic, its semantic-context operators, its lineage and compression grammar, its certification layer, and its scaling into the Neurol Ledger Network.
+
+\end{document}

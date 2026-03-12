@@ -1,0 +1,755 @@
+\documentclass[11pt,a4paper]{article}
+
+% ==================================================
+% Packages
+% ==================================================
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{ragged2e}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem}
+\usepackage{booktabs,array,longtable}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{url}
+
+% ==================================================
+% Layout safety
+% ==================================================
+\setstretch{1.08}
+\setlength{\emergencystretch}{3em}
+\setlist[itemize]{topsep=3pt,itemsep=2pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt}
+\sloppy
+\raggedbottom
+\Urlmuskip=0mu plus 1mu
+\allowdisplaybreaks
+
+% ==================================================
+% Colors
+% ==================================================
+\definecolor{darkblue}{RGB}{20,45,90}
+\definecolor{midblue}{RGB}{46,117,182}
+\definecolor{lightblue}{RGB}{235,244,251}
+\definecolor{amber}{RGB}{210,120,0}
+\definecolor{green}{RGB}{46,125,50}
+\definecolor{purple}{RGB}{106,27,154}
+
+% ==================================================
+% Hyperref
+% ==================================================
+\hypersetup{
+  colorlinks=true,
+  linkcolor=darkblue,
+  citecolor=darkblue,
+  urlcolor=darkblue,
+  pdftitle={Vo: Primordial Theory I - Foundational Theory},
+  pdfauthor={Kevin T.N},
+  pdfsubject={Foundational theory for Neurol},
+  pdfcreator={LaTeX}
+}
+
+% ==================================================
+% Theorem environments
+% ==================================================
+\newtheorem{definition}{Definition}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{postulate}{Postulate}[section]
+\newtheorem{principle}{Principle}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{hypothesis}{Hypothesis}[section]
+\newtheorem{corollary}{Corollary}[section]
+
+% ==================================================
+% Section title format
+% ==================================================
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection.}{0.6em}{}
+
+% ==================================================
+% Boxes
+% ==================================================
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{lawbox}[1]{colback=lightblue,colframe=midblue,title={#1},breakable}
+\newtcolorbox{notebox}[1]{colback=amber!8,colframe=amber,title={#1},breakable}
+\newtcolorbox{purplebox}[1]{colback=purple!5,colframe=purple,title={#1},breakable}
+
+% ==================================================
+% Shortcuts
+% ==================================================
+\newcommand{\TuNiem}{\textit{Tu Niem}}
+\newcommand{\SinhVN}{\textit{Sinh}}
+\newcommand{\DanVN}{\textit{Dan}}
+\newcommand{\ChuyenVN}{\textit{Chuyen}}
+\newcommand{\DungVN}{\textit{Dung}}
+\newcommand{\HoaiVN}{\textit{Hoai}}
+\newcommand{\VoVN}{\textit{Vo}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\Abs}[1]{\left\lvert #1 \rightvert}
+\newcommand{\Set}[1]{\left\{ #1 \right\}}
+\newcommand{\Inner}[2]{\left\langle #1,#2 \right\rangle}
+
+\title{\textbf{Vo: Primordial Theory I}\\
+\large Foundational Theory for Neurol}
+
+\author{Kevin T.N \\ Vietnam \\ \texttt{keedavinci@gmail.com}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document presents the foundational layer of Primordial Theory for Neurol. It establishes the primitive ontology, the reference frames, the dual-axis logic of becoming, the thermodynamic interpretation of continuation and dissolution, the semantic-context basis, the temporal and energetic interpretation of transformation, the lineage and compression grammar, the relation to \VoVN, the logic of continuity and certification, and the derivation path toward Neurol. The emphasis of the present volume is conceptual and ontological rather than algebraic closure. Full operator equations and the complete mathematical formal system are deferred to the companion formal volume.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ==================================================
+\section{Reference Position and Origin Statement}
+% ==================================================
+
+For the purposes of this series, the root reference is declared as:
+\begin{center}
+\textbf{"Nguon: Me Thien Nhien"}
+\end{center}
+
+The origin statement of the present theory is expressed in English as follows:
+\begin{center}
+\emph{Source: deconstructing one's own consciousness and simulating it back into formal structure.}
+\end{center}
+
+Primordial Theory is the root layer from which the later Neurol substrate, its formal system, its continuity mechanisms, and its implementation structures become derivable. It is not an auxiliary preface. It is the ontological and conceptual constitution of the project.
+
+% ==================================================
+\section{Primitive Vocabulary}
+% ==================================================
+
+The primitive ontological grammar of the theory is:
+\begin{center}
+\TuNiem, \SinhVN, \DanVN, \ChuyenVN, \DungVN, \HoaiVN, \VoVN
+\end{center}
+
+These seven concepts are treated as primitive because the rest of the theory is constructed by differentiation, relation, and transformation among them.
+
+\begin{definition}[\TuNiem]
+\TuNiem\ is directed potential before explicit structural manifestation. It is asymmetrically oriented possibility. It is not yet explicit form, yet it is no longer neutral indifference.
+\end{definition}
+
+\begin{definition}[\SinhVN]
+\SinhVN\ is the threshold by which directed potential crosses into explicit existent structure.
+\end{definition}
+
+\begin{definition}[\DanVN]
+\DanVN\ is the ordered extension, structuring, and relational spread of what has emerged.
+\end{definition}
+
+\begin{definition}[\ChuyenVN]
+\ChuyenVN\ is the lawful reconfiguration of explicit structure under interaction, accumulated drive, threshold, and context.
+\end{definition}
+
+\begin{definition}[\DungVN]
+\DungVN\ is coherent persistence through transformation. It is continuation that remains internally legible to itself and to its lineage.
+\end{definition}
+
+\begin{definition}[\HoaiVN]
+\HoaiVN\ is the mode in which a structure loses full foreground form yet remains as residue, compression, trace, or seed.
+\end{definition}
+
+\begin{definition}[\VoVN]
+\VoVN\ is the latent, residual, compressed, non-foreground substrate-condition of preservable reality.
+\end{definition}
+
+\begin{principle}[Primitive cycle]
+The canonical primitive cycle is
+\[
+\TuNiem \rightarrow \SinhVN \rightarrow \DanVN \rightarrow \ChuyenVN \rightarrow (\DungVN\ \text{or}\ \HoaiVN) \rightarrow \VoVN \rightsquigarrow \TuNiem.
+\]
+\end{principle}
+
+\begin{remark}
+The cycle is recurrent but not repetitive. What returns is not simple recurrence but transformed continuity carrying trace, residue, and asymmetry from prior passages.
+\end{remark}
+
+% ==================================================
+\section{Reference Frames and Coordinates of Description}
+% ==================================================
+
+A theory of emergence becomes ambiguous if it does not separate the frames within which events are described. Primordial Theory therefore introduces several explicit frames.
+
+\begin{definition}[Spatial reference frame]
+The spatial reference frame, denoted $\mathfrak{F}_{\mathrm{space}}$, governs coexistence, adjacency, transport, locality, and coupling possibility. Its principal coordinate is position-like state.
+\end{definition}
+
+\begin{definition}[Temporal reference frame]
+The temporal reference frame, denoted $\mathfrak{F}_{\mathrm{time}}$, governs ordered distinguishable transformation, accumulation, threshold crossing, and commit.
+\end{definition}
+
+\begin{definition}[Semantic reference frame]
+The semantic reference frame, denoted $\mathfrak{F}_{\mathrm{sem}}$, governs context, anchors, semantic neighborhoods, meaning shifts, and interpretive compatibility.
+\end{definition}
+
+\begin{definition}[Lineage reference frame]
+The lineage reference frame, denoted $\mathfrak{F}_{\mathrm{line}}$, governs ancestry, branch continuity, inheritance, seed legality, and reconstructive continuity.
+\end{definition}
+
+\begin{definition}[Void reference frame]
+The void reference frame, denoted $\mathfrak{F}_{\mathrm{void}}$, governs latent, residual, compressed, and return-capable states.
+\end{definition}
+
+\begin{definition}[Ledger reference frame]
+The ledger reference frame, denoted $\mathfrak{F}_{\mathrm{ledger}}$, governs certified persistence, exchange trace, commitment recording, and distributed continuity.
+\end{definition}
+
+\begin{principle}[Frame discipline]
+A statement about primordial reality is complete only if its frame of validity is clear. When more than one frame participates in an event, the relation between the frames must be stated.
+\end{principle}
+
+\subsection{Why multiple frames are necessary}
+
+An entity may be spatially adjacent but temporally unready. It may be semantically compatible but lineally incoherent. It may collapse out of active presence yet remain legal in the void frame. It may be transformed without being certified in the ledger frame. These distinctions justify the explicit separation of frames.
+
+% ==================================================
+\section{Primordial Logic as Dual-Axis Logic}
+% ==================================================
+
+Primordial Logic is dual-axis because becoming is constrained by at least two irreducible directions: where things may encounter and when things become committed.
+
+\subsection{The spatial axis}
+
+The spatial axis governs encounter possibility. It answers whether one structure can reach, couple with, or influence another in a locality-sensitive sense.
+
+\subsection{The temporal axis}
+
+The temporal axis governs accumulation and commitment. It answers whether a possible interaction has matured enough to become event-like rather than merely latent.
+
+\begin{principle}[Intersection condition]
+\ChuyenVN\ is not defined by space alone and not defined by time alone. It occurs where spatial accessibility and temporal sufficiency intersect.
+\end{principle}
+
+\subsection{The five-phase reading of the dual-axis cycle}
+
+The five-phase interpretation is:
+\begin{enumerate}[label=\arabic*.]
+    \item \VoVN: latent substrate condition;
+    \item \SinhVN: emergence from asymmetry;
+    \item \DanVN: ordered propagation across available relation-space;
+    \item \ChuyenVN: thresholded transformation;
+    \item \DungVN/\HoaiVN: continuation or dissolution-compression.
+\end{enumerate}
+
+\begin{remark}
+In this reading, \DanVN\ is the spread of relation and ordering, while \ChuyenVN\ is the evental narrowing of potential into committed reconfiguration.
+\end{remark}
+
+% ==================================================
+\section{Thermodynamic Interpretation}
+% ==================================================
+
+Primordial Theory is not a purely poetic ontology. It makes contact with thermodynamic intuition because continuation and dissolution are not arbitrary labels. They express differential tendencies of systems under gradients, costs, and bounded transformation.
+
+\begin{definition}[Generalized potential gradient]
+A primordial process is nontrivial only if it is sustained under non-zero generalized potential gradient. A world without gradient cannot sustain rich emergence.
+\end{definition}
+
+\begin{definition}[Gibbs tendency]
+The free-energy tendency distinguishes interactions that favor continuation from interactions that favor dissipation. Lower effective free-energy tendency favors more stable continuation.
+\end{definition}
+
+\begin{principle}[Non-equilibrium condition]
+A fully equilibrated system cannot sustain rich Primordial emergence. Repeated \SinhVN, \DanVN, and \ChuyenVN\ require maintained non-equilibrium.
+\end{principle}
+
+\subsection{Organization across scales}
+
+The same primordial logic can be read across multiple organizational scales:
+\begin{enumerate}[label=\arabic*.]
+    \item molecule;
+    \item network;
+    \item vesicle;
+    \item proto-cell.
+\end{enumerate}
+
+\begin{proposition}
+The primitive cycle can recur across scales while preserving logical form and changing material embodiment.
+\end{proposition}
+
+\subsection{Dung and Hoai as dynamic tendencies}
+
+\DungVN\ and \HoaiVN\ should not be misunderstood as moral categories. They are structural tendencies. \DungVN\ names the pathway of coherent continuation. \HoaiVN\ names the pathway of loss of foreground organization with retention of compressed continuity.
+
+% ==================================================
+\section{Foundational Ontology}
+% ==================================================
+
+\begin{axiom}[Anti-annihilation]
+No meaningful structure is reduced by primitive right to absolute nothing. What ceases in one foreground mode may continue as trace, residue, seed, compression, lineage, or return into \VoVN.
+\end{axiom}
+
+\begin{axiom}[Transformation]
+What exists continues not by static immobility but by lawful transformation.
+\end{axiom}
+
+\begin{axiom}[Complementarity]
+Explicit existence and \VoVN\ are complementary modes, not absolute opposites.
+\end{axiom}
+
+\begin{axiom}[Context dependence]
+Meaning is not intrinsic in isolation. Meaning emerges or shifts through active contextual relation.
+\end{axiom}
+
+\begin{axiom}[Lineage continuity]
+Continuation is not exhausted by current state alone. Continuation also includes ancestry, branch, seed-bearing potential, and residue.
+\end{axiom}
+
+\begin{axiom}[Certifiable persistence]
+Not every transformation deserves equivalent persistence. Some transformations become certifiable events because they cross thresholds of commitment, continuity, and consequence.
+\end{axiom}
+
+\subsection{Modes of existence admitted by the theory}
+
+The theory admits at least the following modes:
+\begin{enumerate}[label=\alph*.]
+    \item explicit active structure;
+    \item latent but preservable structure;
+    \item compressed or seed-like structure;
+    \item residual or trace-bearing structure;
+    \item contextualized structure;
+    \item lineage-bearing structure;
+    \item ledger-certified structure.
+\end{enumerate}
+
+% ==================================================
+\section{Primordial Unit and Identity}
+% ==================================================
+
+A primordial unit is not yet a full neurol node, not yet a full agent, and not merely an inert point. It is a bounded locus of becoming.
+
+\begin{definition}[Primordial unit]
+A primordial unit is a bounded existent locus that carries explicit state, residue, transformation capacity, phase, lineage, context, seed, semantic relation, and the potential for certified persistence.
+\end{definition}
+
+\subsection{Components of primordial identity}
+
+The identity of a primordial unit is not reducible to its explicit state. It is composed of:
+\begin{enumerate}[label=\alph*.]
+    \item current organization;
+    \item residue of prior transformations;
+    \item lineage and branch memory;
+    \item seed-bearing compressibility;
+    \item semantic trajectory;
+    \item context persistence.
+\end{enumerate}
+
+\begin{definition}[Minimal boundary]
+A primordial unit has a boundary if it can distinguish self-state, incoming perturbation, outgoing transformation, and latent carry-over.
+\end{definition}
+
+\begin{remark}
+The boundary here is not necessarily a hard wall. It is an operational distinction condition.
+\end{remark}
+
+% ==================================================
+\section{Dynamic Context Field as the Logic of Meaning}
+% ==================================================
+
+Dynamic Context Field, abbreviated as \textbf{DCF}, is integrated into Primordial Theory as the logic of context-dependent meaning.
+
+\subsection{Semantic relation}
+
+A semantic state does not exist in isolation. It exists relative to anchors, neighbors, levels of abstraction, and contextual frames.
+
+\begin{definition}[Anchor]
+An anchor is a context-bearing relation-point that helps determine the current meaning frame of an entity.
+\end{definition}
+
+\begin{definition}[Context plane]
+A context plane is a local semantic frame induced by the arrangement of anchors around a currently interpreted entity.
+\end{definition}
+
+\subsection{Why semantic meaning must be contextual}
+
+The same entity may acquire different interpretive force under different anchor neighborhoods. Primordial Theory therefore rejects purely intrinsic meaning. Meaning is always at least partially contextual.
+
+\subsection{Imagination and context recombination}
+
+Imagination is not introduced as mystical invention. It is the lawful recombination of context-bearing frames, anchor substitutions, and semantic perspective shifts.
+
+\begin{definition}[Context tree]
+A context tree is the recursively generated family of possible context frames reachable by lawful recombination from a current anchor configuration.
+\end{definition}
+
+\subsection{Identity-trajectory gap}
+
+A system can possess high combinatorial imagination without possessing deep continuity. The identity-trajectory gap names the difference between semantic recombination capacity and lived continuity carried by memory, residue, and lineage.
+
+\subsection{Reset problem}
+
+If a system returns to semantic time zero at every cycle, semantic richness does not accumulate into identity. This is why DCF alone is insufficient. It must be tied to residue, lineage, and duration.
+
+% ==================================================
+\section{Time and Energy as Interpretive Conditions of Transformation}
+% ==================================================
+
+\subsection{Time is not an isolated thing}
+
+Primordial Theory treats time as operationally visible through change, not as a separately manipulable substance. A time mark without state difference is not yet meaningful to the system.
+
+\subsection{Material state difference}
+
+Perceived time is mediated by detectable difference. A clock is therefore not pure time but material recurrence counted as time.
+
+\subsection{Energy as transformation capacity}
+
+Energy is interpreted here as transformation capacity. It is the budget by which a latent possibility can become an explicit event.
+
+\subsection{Temporal superposition}
+
+Before commitment, multiple transformation channels may coexist as unresolved future tendencies. This is temporal superposition. It is not the claim that fully independent explicit worlds already exist. It is the claim that commitment is not yet narrowed.
+
+\subsection{Collapse}
+
+Collapse is the narrowing of unresolved transformation possibilities into one committed pathway under sufficient displacement and capacity.
+
+\subsection{Weak and strong perturbation}
+
+A weak perturbation modifies the local tendency field without forcing evental commitment. A strong perturbation exceeds the relevant displacement barrier and therefore triggers commitment.
+
+% ==================================================
+\section{Lineage and Asymmetric Reproductive Compression}
+% ==================================================
+
+Asymmetric Reproductive Compression, abbreviated as \textbf{ARC}, is integrated as the lineage and regrowth grammar of Primordial Theory.
+
+\begin{definition}[Lineage]
+Lineage is the continuity of identity-bearing relation through descent, branching, compression, and re-emergence.
+\end{definition}
+
+\begin{definition}[Compression]
+Compression is the reduction of explicit structure into a denser carrier that preserves generative potential without preserving full execution detail.
+\end{definition}
+
+\begin{definition}[Decompression]
+Decompression is the lawful re-expansion of compressed generative potential under a receiving substrate or context.
+\end{definition}
+
+\subsection{Asymmetry in reproduction}
+
+Reproduction is asymmetric when one side contributes a compressed generative core and the other side contributes a receiving environment, substrate, or expansion field. This asymmetry is structurally central because it separates continuity of law from continuity of material embodiment.
+
+\subsection{Interaction types}
+
+The canonical interaction types are DD, DH, HD, and HH, where D and H denote dominant \DungVN-like and \HoaiVN-like tendencies of the interacting sides.
+
+\begin{remark}
+These types do not merely classify events. They classify regimes of continuation, compression, and transfer.
+\end{remark}
+
+\subsection{Known-combination reset}
+
+Compressed transmission does not preserve the full lived context of the precursor. It preserves a selective generative core. This explains why lineage continuity does not imply total contextual inheritance.
+
+% ==================================================
+\section{Relation to \VoVN}
+% ==================================================
+
+\VoVN\ belongs to the theory from the start. It is not an appendix, not merely an archive, and not a storage afterthought.
+
+\begin{definition}[Return]
+Return is the passage from active or explicit form toward latent, compressed, or residual mode without ontological erasure.
+\end{definition}
+
+\subsection{Modes of return}
+
+A structure may enter \VoVN\ through:
+\begin{enumerate}[label=\alph*.]
+    \item residue;
+    \item trace;
+    \item compression;
+    \item seed form;
+    \item contextual archive;
+    \item unresolved potential.
+\end{enumerate}
+
+\subsection{Vo as preservable latency}
+
+\VoVN\ is not nullity. It is preservable latency. It is the non-foreground mode in which a structure may continue without full active explicitness.
+
+\subsection{Vo and lineage}
+
+Entry into \VoVN\ does not erase lineage. It changes the mode in which lineage is carried.
+
+% ==================================================
+\section{Ledger Continuity and Certified Persistence}
+% ==================================================
+
+Ledger is the formal persistence surface of commitment, continuity, exchange, and historical trace.
+
+\begin{definition}[Ledger]
+A ledger is the certifying layer by which transformations become persistent not only as consequences in matter or memory, but also as accountable continuity-bearing events.
+\end{definition}
+
+\begin{definition}[Ledger event]
+A ledger event is a certified record of commitment, continuity, valuation, and consequence attached to a transformation.
+\end{definition}
+
+\subsection{Why ledger belongs inside the foundational theory}
+
+Once a system distinguishes thresholded commitment, lineage, consequence, and continuation, it also distinguishes which transformations deserve persistence as certified history. This makes ledger foundational rather than optional.
+
+\subsection{Ledger and value}
+
+Ledger does not merely say that something happened. It says how that event matters for continuation, existence valuation, and exchange legitimacy.
+
+\subsection{Ledger and compression}
+
+A collapse into \HoaiVN\ or \VoVN\ may still be ledger-worthy if it preserves lineage and consequence above the required threshold. Thus ledger does not certify only successful foreground continuation. It can also certify lawful compressive transition.
+
+% ==================================================
+\section{Neurol Ledger Network as a Derived Continuity Structure}
+% ==================================================
+
+The Neurol Ledger Network is a later structured descendant of primordial ledger logic.
+
+\begin{definition}[Neurol Ledger Network]
+A Neurol Ledger Network is the distributed continuity structure in which neurol-bearing units or clusters are related through certified histories of exchange, continuation, commitment, and lineage-preserving interaction.
+\end{definition}
+
+\subsection{Node lift}
+
+A primordial unit lifts toward neurol-network participation when its persistence, continuity, and exchange capacity become sufficient for repeated certified relation.
+
+\subsection{Edge formation}
+
+A ledger edge emerges when two units produce not merely interaction but certifiable, continuity-bearing interaction.
+
+\subsection{Network memory}
+
+Memory in the Neurol Ledger Network is not only node-local. It is distributed through edge histories, certified transitions, and shared continuity-bearing events.
+
+\subsection{Existence reward}
+
+If later neurol theory employs existence-weighted reward, that reward should be grounded in ledger-certified continuation rather than raw activity count.
+
+% ==================================================
+\section{Operator Families in Conceptual Form}
+% ==================================================
+
+Although the full formulas belong to the formal companion volume, the theory already distinguishes operator families conceptually.
+
+\subsection{Ingress operators}
+
+Ingress operators govern how perturbation reaches a unit through its active boundary and context.
+
+\subsection{State operators}
+
+State operators govern transformation, low-energy update, residue production, seed formation, and lineage adjustment.
+
+\subsection{Semantic operators}
+
+Semantic operators govern context construction, context projection, imagination, selection, and semantic scoring.
+
+\subsection{Lineage operators}
+
+Lineage operators govern compression, decompression, inheritance, branch continuity, and reconstructive legality.
+
+\subsection{Ledger operators}
+
+Ledger operators govern certification, valuation, write legitimacy, continuity scoring, and network lift.
+
+% ==================================================
+\section{Frame Interaction Laws in Conceptual Form}
+% ==================================================
+
+The frames introduced earlier interact lawfully.
+
+\subsection{Spatial-temporal interaction}
+
+An event requires both encounter possibility and commitment readiness.
+
+\subsection{Semantic-temporal interaction}
+
+Semantic compatibility can lower the effective threshold of commitment, while semantic incoherence can raise it.
+
+\subsection{Lineage-semantic interaction}
+
+A transformation can be semantically rich but genealogically incoherent, or genealogically stable but semantically poor. A mature theory must distinguish both.
+
+\subsection{Void-lineage interaction}
+
+Entry into \VoVN\ compresses lineage rather than erasing it.
+
+\subsection{Ledger-void interaction}
+
+Even a loss of foreground explicitness may still be certifiable if continuity, lineage, and consequence remain above threshold.
+
+% ==================================================
+\section{Invariants and Regulated Quantities}
+% ==================================================
+
+Some aspects of the theory are not free to vary without limit.
+
+\begin{definition}[Non-null persistence invariant]
+Meaningful structures do not pass by primitive right into absolute nullity.
+\end{definition}
+
+\begin{definition}[Bounded mutation]
+Mutation must remain bounded enough that lineage continuity is not destroyed by arbitrary drift.
+\end{definition}
+
+\begin{definition}[Capacity boundedness]
+Transformation capacity is finite and therefore imposes real cost on becoming.
+\end{definition}
+
+\begin{definition}[Context finiteness]
+Active context remains finite, otherwise semantic interpretation becomes undefined or ungrounded.
+\end{definition}
+
+\begin{definition}[Ledger monotonicity]
+Once an event is lawfully certified, ledger history is append-preserving rather than self-erasing.
+\end{definition}
+
+\subsection{Quasi-invariants}
+
+Identity coherence, lineage continuity, semantic compatibility, seed integrity, and viability are not strictly constant, but they are regulated quantities that must remain within lawful bands.
+
+% ==================================================
+\section{Parameter Families in Conceptual Form}
+% ==================================================
+
+The later formal volume will define the explicit symbols and equations, but the conceptual families are already fixed:
+\begin{enumerate}[label=\alph*.]
+    \item threshold family;
+    \item capacity family;
+    \item semantic family;
+    \item lineage family;
+    \item ledger family.
+\end{enumerate}
+
+\begin{remark}
+This matters because later derived systems specialize parameter families rather than isolated symbols.
+\end{remark}
+
+% ==================================================
+\section{Canonical Process Routing in Conceptual Form}
+% ==================================================
+
+The canonical primordial cycle may be described as follows:
+\begin{enumerate}[label=\arabic*.]
+    \item perturbation arrives;
+    \item context shapes ingress;
+    \item readiness accumulates;
+    \item threshold is tested;
+    \item transformation or low-energy update occurs;
+    \item residue and consequence are produced;
+    \item semantic and lineage states are adjusted;
+    \item phase is re-evaluated;
+    \item seed or compression may form;
+    \item certified persistence may be written;
+    \item network continuation may emerge.
+\end{enumerate}
+
+\begin{lawbox}{Conceptual routing law}
+The theory does not treat state change, memory, continuity, certification, and network relation as separate accidents. They belong to one route of becoming.
+\end{lawbox}
+
+% ==================================================
+\section{Derivation Ladder Across the Project}
+% ==================================================
+
+\subsection{Primordial}
+
+Primordial defines the general grammar of becoming, continuation, compression, return, meaning, lineage, and certified persistence.
+
+\subsection{Sinh}
+
+Sinh specializes the primordial grammar into the foundational ontology of the Neurol substrate.
+
+\subsection{Dan}
+
+Dan specializes the primordial grammar into the complete formal system of the Neurol substrate.
+
+\subsection{Chuyen}
+
+Chuyen specializes the primordial grammar into communication and architecture.
+
+\subsection{Vo line}
+
+The Vo sequence specializes the primordial grammar into latent, archival, reconstructive, and void-oriented systems.
+
+\subsection{Neurol Ledger Network}
+
+The Neurol Ledger Network specializes primordial ledger logic into distributed continuity, exchange, existence valuation, and network memory.
+
+\begin{principle}[Derivation ladder]
+Later volumes should specialize Primordial Theory rather than redefining its ontology from scratch.
+\end{principle}
+
+% ==================================================
+\section{Controlled Vocabulary}
+% ==================================================
+
+The following terms are constitutionally central and should remain stable across later volumes:
+\begin{enumerate}[label=\alph*.]
+    \item \TuNiem;
+    \item \SinhVN;
+    \item \DanVN;
+    \item \ChuyenVN;
+    \item \DungVN;
+    \item \HoaiVN;
+    \item \VoVN;
+    \item Dynamic Context Field;
+    \item context plane;
+    \item semantic resonance;
+    \item identity-trajectory gap;
+    \item Asymmetric Reproductive Compression;
+    \item residue;
+    \item seed;
+    \item lineage;
+    \item transformation capacity;
+    \item temporal superposition;
+    \item collapse;
+    \item ledger continuity;
+    \item Neurol Ledger Network;
+    \item viability.
+\end{enumerate}
+
+% ==================================================
+\section{What This Volume Establishes}
+% ==================================================
+
+This volume establishes the following:
+\begin{enumerate}[label=\arabic*.]
+    \item Primordial Theory is the foundational theory for Neurol.
+    \item The theory is organized by the seven primitive concepts \TuNiem, \SinhVN, \DanVN, \ChuyenVN, \DungVN, \HoaiVN, and \VoVN.
+    \item Primordial Logic is a dual-axis framework integrating spatial and temporal conditions of interaction.
+    \item Thermodynamic grounding is explicit as the interpretive basis of continuation and dissolution tendencies.
+    \item Reference frames are explicit: spatial, temporal, semantic, lineage, void, and ledger.
+    \item Dynamic Context Field is integrated as the logic of context-dependent meaning.
+    \item Time is interpreted through state change and energy through transformation capacity.
+    \item Collapse is interpreted as the narrowing of unresolved transformation into committed pathway.
+    \item Asymmetric Reproductive Compression is integrated as the lineage and regrowth grammar of the theory.
+    \item \VoVN\ is integrated as the latent, residual, compressed, and non-annihilative substrate-condition.
+    \item Ledger continuity is integrated as the certifying surface of commitment, consequence, and exchange.
+    \item The derivation path from Primordial to Neurol, Dan, Chuyen, Vo, and the Neurol Ledger Network is explicit.
+\end{enumerate}
+
+% ==================================================
+\section{Conclusion}
+% ==================================================
+
+Primordial Theory is the constitutional root of the whole system. It contains primitive ontology, dual-axis logic, thermodynamic interpretation, reference frames, semantic-context dependence, temporal and energetic interpretation of transformation, lineage and compression grammar, void relation, and ledger continuity in one place because all later systems depend on these foundations. It defines the grammar by which a transforming, memory-bearing, context-sensitive, lineage-preserving, certifiable existence can be thought before being fully formalized in the companion mathematical volume.
+
+\end{document}
