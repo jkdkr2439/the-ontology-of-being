@@ -1,3 +1,17 @@
+---
+license: cc-by-4.0
+language:
+- en
+- vi
+tags:
+- ontology
+- philosophy
+- primordial-algorithm
+- epistemology
+- ai-theory
+pretty_name: The Ontology of Being
+---
+
 # The Ontology of Being
 
 > **Author:** Kevin T.N — Vietnam
